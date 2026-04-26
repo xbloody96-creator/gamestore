@@ -9,7 +9,7 @@ $pageTitle = '404 - Страница не найдена';
     <title><?= htmlspecialchars($pageTitle) ?></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
     <?php include __DIR__ . '/../src/views/layouts/header.php'; ?>
@@ -25,6 +25,6 @@ $pageTitle = '404 - Страница не найдена';
     
     <?php include __DIR__ . '/../src/views/layouts/footer.php'; ?>
     
-    <script src="/assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

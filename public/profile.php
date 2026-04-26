@@ -60,14 +60,14 @@ ob_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $pageTitle ?> - <?= $GLOBALS['siteName'] ?></title>
-    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
     <header class="header">
         <div class="container">
             <div class="header-top">
                 <a href="/" class="logo">
-                    <img src="https://via.placeholder.com/50x50/6c5ce7/ffffff?text=G" alt="GameStore Logo">
+                    <img src="assets/images/logo-placeholder.svg" alt="GameStore Logo">
                     <span><?= $GLOBALS['siteName'] ?></span>
                 </a>
                 
@@ -240,7 +240,7 @@ echo $headerContent;
     <!-- Шапка профиля -->
     <div class="profile-header fade-in">
         <img 
-            src="<?= $user['avatar'] ? '/' . htmlspecialchars($user['avatar']) : 'https://via.placeholder.com/150x150/6c5ce7/ffffff?text=' . urlencode(substr($user['nickname'], 0, 1)) ?>" 
+            src="<?= $user['avatar'] ? '/' . htmlspecialchars($user['avatar']) : 'assets/images/avatar-placeholder.svg' ?>" 
             alt="Аватар" 
             class="profile-avatar"
         >
@@ -403,3 +403,5 @@ echo $headerContent;
 </div>
 
 <?php include __DIR__ . '/../src/views/layouts/footer.php'; ?>
+
+<script src="assets/js/main.js"></script>
