@@ -1,10 +1,36 @@
-(public/assets/images/avatar-placeholder.svg
-public/assets/images/logo-placeholder.svg
-public/assets/images/placeholder-logo.png
-public/assets/images/placeholder.png
-public/404.php
-public/admin/index.php
-public/admin/layout.php
-public/index.php
-public/profile.php
-)
+```
+# Compiled and build artifacts
+*.pyc
+__pycache__/
+
+# Dependencies
+vendor/
+node_modules/
+
+# Logs and temp files
+*.log
+*.tmp
+
+# Environment
+.env
+.env.local
+*.env.*
+
+# Editors
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Coverage reports
+coverage/
+htmlcov/
+.coverage
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+```
