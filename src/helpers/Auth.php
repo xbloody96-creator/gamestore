@@ -10,11 +10,11 @@ class Auth
     {
         $db = \App\Config\Database::getInstance()->getConnection();
         
-        $stmt = $db->prepare("SELECT * FROM users WHERE (email = :login OR login = :login) AND is_active = 1");
+        $stmt = $db->prepare("SELECT * FROM users WHERE (email = :login OR login = :login) AND status = 1");
         $stmt->execute(['login' => $emailOrLogin]);
         $user = $stmt->fetch();
         
-        if ($user && password_verify($password, $user['password_hash'])) {
+        if ($user && password_verify($password, $user['password'])) {
             self::$currentUser = $user;
             self::createSession($user['id']);
             return true;
@@ -79,15 +79,15 @@ class Auth
         $passwordHash = password_hash($data['password'], PASSWORD_DEFAULT);
         
         $stmt = $db->prepare("
-            INSERT INTO users (email, login, password_hash, full_name, nickname, birth_date, gender, avatar)
-            VALUES (:email, :login, :password, :full_name, :nickname, :birth_date, :gender, :avatar)
+            INSERT INTO users (email, login, password, fio, nickname, birth_date, gender, avatar)
+            VALUES (:email, :login, :password, :fio, :nickname, :birth_date, :gender, :avatar)
         ");
         
         $stmt->execute([
             'email' => $data['email'],
             'login' => $data['login'],
             'password' => $passwordHash,
-            'full_name' => $data['full_name'],
+            'fio' => $data['full_name'],
             'nickname' => $data['nickname'],
             'birth_date' => $data['birth_date'],
             'gender' => $data['gender'],
@@ -173,7 +173,7 @@ class Auth
         $stmt = $db->prepare("
             SELECT u.* FROM users u
             JOIN sessions s ON u.id = s.user_id
-            WHERE s.token = :token AND s.expires_at > NOW() AND u.is_active = 1
+            WHERE s.token = :token AND s.expires_at > NOW() AND u.status = 1
         ");
         
         $stmt->execute(['token' => $_SESSION['auth_token']]);
@@ -198,7 +198,7 @@ class Auth
     public static function isAdmin(): bool
     {
         $user = self::user();
-        return $user && ($user['is_admin'] ?? false);
+        return $user && ($user['role'] === 'admin');
     }
     
     public static function requireLogin(): void
