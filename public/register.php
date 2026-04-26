@@ -161,7 +161,7 @@ include __DIR__ . '/../src/views/layouts/header.php';
         <form method="POST" action="" enctype="multipart/form-data">
             <!-- Загрузка аватарки -->
             <div class="avatar-upload" onclick="document.getElementById('avatarInput').click()">
-                <img id="avatarPreview" class="avatar-preview" src="https://via.placeholder.com/120x120/dfe6e9/636e72?text=Avatar" alt="Аватар">
+                <img id="avatarPreview" class="avatar-preview" src="/gamestore-main/public/assets/images/placeholder-avatar.png" alt="Аватар">
                 <p>📷 Нажмите для загрузки аватарки</p>
                 <small style="color: var(--text-muted)">JPG, PNG, GIF до 5MB</small>
                 <input type="file" id="avatarInput" name="avatar" accept="image/*" onchange="previewAvatar(this)">
