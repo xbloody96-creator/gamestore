@@ -138,16 +138,14 @@ class Auth
         $db = \App\Config\Database::getInstance()->getConnection();
         
         $stmt = $db->prepare("
-            INSERT INTO sessions (user_id, token, ip_address, user_agent, expires_at)
-            VALUES (:user_id, :token, :ip, :agent, :expires)
+            INSERT INTO user_sessions (user_id, session_id, ip_address, last_activity)
+            VALUES (:user_id, :session_id, :ip, NOW())
         ");
         
         $stmt->execute([
             'user_id' => $userId,
-            'token' => $token,
-            'ip' => $_SERVER['REMOTE_ADDR'] ?? null,
-            'agent' => $_SERVER['HTTP_USER_AGENT'] ?? null,
-            'expires' => $expiresAt
+            'session_id' => $token,
+            'ip' => $_SERVER['REMOTE_ADDR'] ?? null
         ]);
         
         $_SESSION['auth_token'] = $token;
@@ -172,8 +170,8 @@ class Auth
         
         $stmt = $db->prepare("
             SELECT u.* FROM users u
-            JOIN sessions s ON u.id = s.user_id
-            WHERE s.token = :token AND s.expires_at > NOW() AND u.status = 1
+            JOIN user_sessions s ON u.id = s.user_id
+            WHERE s.session_id = :token AND u.status = 1
         ");
         
         $stmt->execute(['token' => $_SESSION['auth_token']]);
