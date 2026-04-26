@@ -13,7 +13,7 @@ class Database
     private function __construct()
     {
         $host = $_ENV['DB_HOST'] ?? 'localhost';
-        $dbname = $_ENV['DB_NAME'] ?? 'gamestore';
+        $dbname = $_ENV['DB_NAME'] ?? 'gamestore_db';
         $username = $_ENV['DB_USER'] ?? 'root';
         $password = $_ENV['DB_PASSWORD'] ?? '';
         $charset = $_ENV['DB_CHARSET'] ?? 'utf8mb4';
