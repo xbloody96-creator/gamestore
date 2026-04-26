@@ -60,7 +60,7 @@ $pageTitle = 'GameStore - Магазин игр, ключей и аккаунт�
                             <?php if ($product['old_price']): ?><span class="old-price"><?= number_format($product['old_price'], 0, '.', ' ') ?> ₽</span><?php endif; ?>
                         </div>
                         <div class="slider-controls">
-                            <a href="/product-detail.php?slug=<?= htmlspecialchars($product['slug']) ?>" class="btn btn-primary">Подробнее →</a>
+                            <a href="<?= url('product-detail.php?slug=' . htmlspecialchars($product['slug'])) ?>" class="btn btn-primary">Подробнее →</a>
                             <button class="btn btn-outline" onclick="addToCart(<?= $product['id'] ?>)">В корзину</button>
                         </div>
                     </div>
@@ -130,7 +130,7 @@ $pageTitle = 'GameStore - Магазин игр, ключей и аккаунт�
         <section id="search" class="search-section">
             <div class="search-container">
                 <h2 style="text-align: center; color: white; margin-bottom: 2rem; font-size: 2rem;">Поиск товаров и новостей</h2>
-                <form class="search-box" action="/products.php" method="GET">
+                <form class="search-box" action="<?= url('products.php') ?>" method="GET">
                     <input type="text" class="search-input" name="q" placeholder="Найти игры, ключи, аккаунты..." required>
                     <button type="submit" class="search-btn">🔍 Поиск</button>
                 </form>
@@ -154,13 +154,13 @@ $pageTitle = 'GameStore - Магазин игр, ключей и аккаунт�
                         <h3 class="product-title"><?= htmlspecialchars($product['name']) ?></h3>
                         <div class="product-rating"><span class="stars">★★★★☆</span><span class="rating-count">(<?= $product['review_count'] ?? 0 ?>)</span></div>
                         <div class="product-price"><span class="current-price"><?= number_format($product['price'], 0, '.', ' ') ?> ₽</span></div>
-                        <div class="product-footer"><a href="/product-detail.php?slug=<?= htmlspecialchars($product['slug'] ?? 'product-'.$product['id']) ?>" class="btn-cart" style="text-align: center; justify-content: center;">Подробнее</a></div>
+                        <div class="product-footer"><a href="<?= url('product-detail.php?slug=' . htmlspecialchars($product['slug'] ?? 'product-'.$product['id'])) ?>" class="btn-cart" style="text-align: center; justify-content: center;">Подробнее</a></div>
                     </div>
                 </div>
                 <?php endforeach; ?>
             </div>
             <div style="text-align: center; margin-top: 3rem;">
-                <a href="/products.php" class="btn btn-primary" style="padding: 1rem 3rem;">Смотреть все товары →</a>
+                <a href="<?= url('products.php') ?>" class="btn btn-primary" style="padding: 1rem 3rem;">Смотреть все товары →</a>
             </div>
         </section>
     </main>

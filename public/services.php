@@ -149,7 +149,7 @@ include __DIR__ . '/../src/views/layouts/header.php';
     <div class="services-grid">
         <?php foreach ($services as $service): ?>
         <div class="service-card glass-card">
-            <a href="/service-detail.php?id=<?= $service['id'] ?>" style="text-decoration: none; color: inherit;">
+            <a href="<?= url('service-detail.php?id=' . $service['id']) ?> style="text-decoration: none; color: inherit;">
                 <img 
                     src="<?= htmlspecialchars($service['image_url'] ?? 'https://via.placeholder.com/400x250') ?>" 
                     alt="<?= htmlspecialchars($service['name']) ?>"

@@ -1,6 +1,7 @@
 <?php
 
 require_once 'init.php';
+require_once 'config.php';
 
 use App\Helpers\Auth;
 use App\Helpers\Validator;
@@ -282,7 +283,7 @@ include __DIR__ . '/../src/views/layouts/header.php';
         </form>
         
         <div class="auth-footer">
-            Уже есть аккаунт? <a href="/login.php">Войти</a>
+            Уже есть аккаунт? <a href="<?= url('login.php') ?>">Войти</a>
         </div>
     </div>
 </div>

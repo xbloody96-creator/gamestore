@@ -217,7 +217,7 @@ include __DIR__ . '/../src/views/layouts/header.php';
             <div class="products-grid">
                 <?php foreach ($results['products'] as $product): ?>
                 <div class="product-card glass-card" style="padding: 0; overflow: hidden;">
-                    <a href="/product-detail.php?id=<?= $product['id'] ?>" style="text-decoration: none; color: inherit;">
+                    <a href="<?= url('product-detail.php?id=' . $product['id']) ?> style="text-decoration: none; color: inherit;">
                         <img src="<?= htmlspecialchars($product['image_url'] ?? 'https://via.placeholder.com/300x200') ?>" 
                              alt="<?= htmlspecialchars($product['name']) ?>"
                              style="width: 100%; height: 180px; object-fit: cover;">
@@ -257,7 +257,7 @@ include __DIR__ . '/../src/views/layouts/header.php';
             <div class="news-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 25px;">
                 <?php foreach ($results['news'] as $news): ?>
                 <div class="news-card glass-card" style="padding: 0; overflow: hidden;">
-                    <a href="/news-detail.php?id=<?= $news['id'] ?>" style="text-decoration: none; color: inherit;">
+                    <a href="<?= url('news-detail.php?id=' . $news['id']) ?> style="text-decoration: none; color: inherit;">
                         <img src="<?= htmlspecialchars($news['image_url'] ?? 'https://via.placeholder.com/400x250') ?>" 
                              alt="<?= htmlspecialchars($news['title']) ?>"
                              style="width: 100%; height: 200px; object-fit: cover;">
@@ -295,7 +295,7 @@ include __DIR__ . '/../src/views/layouts/header.php';
             <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px;">
                 <?php foreach ($results['services'] as $service): ?>
                 <div class="service-card glass-card" style="padding: 25px;">
-                    <a href="/service-detail.php?id=<?= $service['id'] ?>" style="text-decoration: none; color: inherit;">
+                    <a href="<?= url('service-detail.php?id=' . $service['id']) ?> style="text-decoration: none; color: inherit;">
                         <h3 style="margin: 0 0 10px; font-size: 1.2rem; color: var(--text-color);">
                             <?= htmlspecialchars($service['name']) ?>
                         </h3>

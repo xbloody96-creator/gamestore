@@ -1,6 +1,7 @@
 <?php
 
 require_once 'init.php';
+require_once 'config.php';
 
 use App\Helpers\Auth;
 
@@ -349,8 +350,8 @@ include __DIR__ . '/../src/views/layouts/header.php';
         <div class="order-number">Номер заказа: <?= htmlspecialchars($success['order_number']) ?></div>
         <p style="color: var(--text-muted); margin-bottom: 30px;">Цифровые товары будут отправлены на указанный email после оплаты.</p>
         <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-            <a href="/profile.php" class="btn btn-primary" style="padding: 15px 30px;">📋 Мои заказы</a>
-            <a href="/products.php" class="btn btn-outline" style="padding: 15px 30px;">→ Продолжить покупки</a>
+            <a href="<?= url('profile.php') ?>" class="btn btn-primary" style="padding: 15px 30px;">📋 Мои заказы</a>
+            <a href="<?= url('products.php') ?>" class="btn btn-outline" style="padding: 15px 30px;">→ Продолжить покупки</a>
         </div>
     </div>
     

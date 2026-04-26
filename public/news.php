@@ -1,6 +1,7 @@
 <?php
 
 require_once 'init.php';
+require_once 'config.php';
 
 use App\Helpers\Auth;
 
@@ -327,7 +328,7 @@ include __DIR__ . '/../src/views/layouts/header.php';
                     </div>
                 </div>
                 
-                <a href="/news-detail.php?slug=<?= htmlspecialchars($news['slug']) ?>" class="btn-read-more">Читать далее →</a>
+                <a href="<?= url('news-detail.php?slug=<?= htmlspecialchars($news['slug']) ?>') ?> class="btn-read-more">Читать далее →</a>
             </div>
         </article>
         <?php endforeach; ?>

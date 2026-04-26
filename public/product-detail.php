@@ -1,6 +1,7 @@
 <?php
 
 require_once 'init.php';
+require_once 'config.php';
 
 use App\Helpers\Auth;
 
@@ -528,7 +529,7 @@ include __DIR__ . '/../src/views/layouts/header.php';
         <?php if (Auth::check()): ?>
         <div class="review-form">
             <h3 style="margin-bottom: 15px;">Оставить отзыв</h3>
-            <form method="POST" action="/api/reviews.php">
+            <form method="POST" action="<?= url('api/reviews.php') ?>">
                 <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
                 <div class="star-rating">
                     <input type="radio" name="rating" id="star5" value="5" required>
@@ -550,7 +551,7 @@ include __DIR__ . '/../src/views/layouts/header.php';
         </div>
         <?php else: ?>
         <p style="text-align: center; color: var(--text-muted); margin-top: 20px;">
-            <a href="/login.php">Войдите</a>, чтобы оставить отзыв
+            <a href="<?= url('login.php') ?>">Войдите</a>, чтобы оставить отзыв
         </p>
         <?php endif; ?>
     </div>

@@ -1,6 +1,7 @@
 <?php
 
 require_once 'init.php';
+require_once 'config.php';
 
 use App\Helpers\Auth;
 use App\Models\Order;
@@ -66,18 +67,18 @@ ob_start();
     <header class="header">
         <div class="container">
             <div class="header-top">
-                <a href="/" class="logo">
+                <a href="<?= url('') ?>" class="logo">
                     <img src="assets/images/logo-placeholder.svg" alt="GameStore Logo">
                     <span><?= $GLOBALS['siteName'] ?></span>
                 </a>
                 
                 <nav>
                     <ul class="nav-menu">
-                        <li><a href="/">Главная</a></li>
-                        <li><a href="/products.php">Товары</a></li>
-                        <li><a href="/news.php">Новости</a></li>
-                        <li><a href="/#about">О нас</a></li>
-                        <li><a href="/#contacts">Контакты</a></li>
+                        <li><a href="<?= url('') ?>">Главная</a></li>
+                        <li><a href="<?= url('products.php') ?>">Товары</a></li>
+                        <li><a href="<?= url('news.php') ?>">Новости</a></li>
+                        <li><a href="<?= url('#about') ?>">О нас</a></li>
+                        <li><a href="<?= url('#contacts') ?>">Контакты</a></li>
                     </ul>
                 </nav>
                 
@@ -85,12 +86,12 @@ ob_start();
                     <button class="theme-toggle" title="Переключить тему">🌙</button>
                     <button class="accessibility-toggle" title="Режим для слабовидящих">🔍</button>
                     
-                    <a href="/cart.php" class="btn btn-secondary" style="position: relative;">
+                    <a href="<?= url('cart.php') ?>" class="btn btn-secondary" style="position: relative;">
                         🛒 Корзина
                         <span class="cart-count" style="position: absolute; top: -8px; right: -8px; background: var(--primary-color); color: white; border-radius: 50%; width: 20px; height: 20px; font-size: 12px; display: flex; align-items: center; justify-content: center;">0</span>
                     </a>
                     
-                    <a href="/logout.php" class="btn btn-danger">Выход</a>
+                    <a href="<?= url('logout.php') ?>" class="btn btn-danger">Выход</a>
                 </div>
             </div>
         </div>
@@ -310,7 +311,7 @@ echo $headerContent;
                         </span>
                     </td>
                     <td>
-                        <a href="/order-detail.php?id=<?= $order['id'] ?>" class="btn btn-outline" style="padding: 5px 15px; font-size: 0.9rem;">Подробнее</a>
+                        <a href="<?= url('order-detail.php?id=' . $order['id']) ?> class="btn btn-outline" style="padding: 5px 15px; font-size: 0.9rem;">Подробнее</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>
@@ -393,7 +394,7 @@ echo $headerContent;
                         </span>
                     </td>
                     <td>
-                        <a href="/order-detail.php?id=<?= $order['id'] ?>" class="btn btn-outline" style="padding: 5px 15px; font-size: 0.9rem;">Подробнее</a>
+                        <a href="<?= url('order-detail.php?id=' . $order['id']) ?> class="btn btn-outline" style="padding: 5px 15px; font-size: 0.9rem;">Подробнее</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>
