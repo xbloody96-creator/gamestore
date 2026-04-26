@@ -2,6 +2,7 @@
 // reset-password.php - Сброс пароля по токену
 
 require_once 'init.php';
+require_once 'config.php';
 
 use App\Helpers\Auth;
 
@@ -133,7 +134,7 @@ include __DIR__ . '/../src/views/layouts/header.php';
         <?php if ($success): ?>
         <div class="alert alert-success"><?= $success ?></div>
         <div class="back-link">
-            <a href="/login.php">Перейти ко входу</a>
+            <a href="<?= url('login.php') ?>">Перейти ко входу</a>
         </div>
         <?php else: ?>
         
@@ -171,7 +172,7 @@ include __DIR__ . '/../src/views/layouts/header.php';
         <?php endif; ?>
         
         <div class="back-link">
-            <a href="/login.php">← Вернуться ко входу</a>
+            <a href="<?= url('login.php') ?>">← Вернуться ко входу</a>
         </div>
         <?php endif; ?>
     </div>

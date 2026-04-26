@@ -1,6 +1,7 @@
 <?php
 
 require_once 'init.php';
+require_once 'config.php';
 
 use App\Helpers\Auth;
 
@@ -288,7 +289,7 @@ include __DIR__ . '/../src/views/layouts/header.php';
                 <div class="filter-group">
                     <label class="filter-label">&nbsp;</label>
                     <button type="submit" class="filter-btn">🔍 Применить</button>
-                    <a href="/products.php" class="reset-filters">Сбросить</a>
+                    <a href="<?= url('products.php') ?>" class="reset-filters">Сбросить</a>
                 </div>
             </div>
         </form>
@@ -320,7 +321,7 @@ include __DIR__ . '/../src/views/layouts/header.php';
                 <?php endif; ?>
                 <div class="product-actions">
                     <button class="action-btn" title="В избранное" onclick="toggleFavorite('product', <?= $product['id'] ?>)">❤️</button>
-                    <a href="/product-detail.php?slug=<?= htmlspecialchars($product['slug']) ?>" class="action-btn" title="Быстрый просмотр">👁️</a>
+                    <a href="<?= url('product-detail.php?slug=<?= htmlspecialchars($product['slug']) ?>') ?> class="action-btn" title="Быстрый просмотр">👁️</a>
                 </div>
             </div>
             <div class="product-info">

@@ -26,7 +26,7 @@ if (!$service) {
             <h1 style="font-size: 3rem; color: var(--text-color); margin-bottom: 20px;">😕</h1>
             <h2 style="color: var(--text-color); margin-bottom: 15px;">Услуга не найдена</h2>
             <p style="color: var(--text-muted); margin-bottom: 30px;">Запрошенная услуга не существует или была удалена</p>
-            <a href="/services.php" class="btn btn-primary">← Вернуться к услугам</a>
+            <a href="<?= url('services.php') ?>" class="btn btn-primary">← Вернуться к услугам</a>
         </div>
     </div>
     <?php
@@ -216,7 +216,7 @@ include __DIR__ . '/../src/views/layouts/header.php';
 
 <div class="service-detail-page fade-in">
     <div class="service-detail-container">
-        <a href="/services.php" style="color: var(--text-muted); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px;">
+        <a href="<?= url('services.php') ?>" style="color: var(--text-muted); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px;">
             ← Назад к услугам
         </a>
         
@@ -264,7 +264,7 @@ include __DIR__ . '/../src/views/layouts/header.php';
                 
                 <?php if (Auth::check()): ?>
                 <div class="service-actions">
-                    <form method="POST" action="/api/service-book.php" style="flex: 1;">
+                    <form method="POST" action="<?= url('api/service-book.php') ?>" style="flex: 1;">
                         <input type="hidden" name="service_id" value="<?= $service['id'] ?>">
                         <button type="submit" class="btn btn-primary" style="width: 100%;" <?= ($service['available_slots'] ?? 0) <= 0 ? 'disabled' : '' ?>>
                             <?= ($service['available_slots'] ?? 0) <= 0 ? 'Нет мест' : 'Записаться на услугу' ?>
@@ -274,7 +274,7 @@ include __DIR__ . '/../src/views/layouts/header.php';
                 
                 <div class="booking-form">
                     <h3 style="margin: 0 0 15px; color: var(--text-color);">📅 Запись на услугу</h3>
-                    <form method="POST" action="/api/service-book.php">
+                    <form method="POST" action="<?= url('api/service-book.php') ?>">
                         <input type="hidden" name="service_id" value="<?= $service['id'] ?>">
                         
                         <div class="form-group">
@@ -308,8 +308,8 @@ include __DIR__ . '/../src/views/layouts/header.php';
                 <?php else: ?>
                 <div style="background: var(--bg-secondary); padding: 20px; border-radius: var(--radius); text-align: center;">
                     <p style="color: var(--text-muted); margin-bottom: 15px;">Для записи на услугу необходимо авторизоваться</p>
-                    <a href="/login.php" class="btn btn-primary">Войти</a>
-                    <a href="/register.php" class="btn btn-outline" style="margin-left: 10px;">Регистрация</a>
+                    <a href="<?= url('login.php') ?>" class="btn btn-primary">Войти</a>
+                    <a href="<?= url('register.php') ?>" class="btn btn-outline" style="margin-left: 10px;">Регистрация</a>
                 </div>
                 <?php endif; ?>
             </div>
@@ -350,7 +350,7 @@ include __DIR__ . '/../src/views/layouts/header.php';
             <?php if (Auth::check()): ?>
             <div class="add-review-form">
                 <h3 style="margin: 0 0 15px; color: var(--text-color);">✍️ Оставить отзыв</h3>
-                <form method="POST" action="/api/service-review.php">
+                <form method="POST" action="<?= url('api/service-review.php') ?>">
                     <input type="hidden" name="service_id" value="<?= $service['id'] ?>">
                     
                     <div class="form-group">
@@ -394,7 +394,7 @@ include __DIR__ . '/../src/views/layouts/header.php';
                 <?php foreach ($relatedServices as $related): ?>
                 <?php if ($related['id'] != $service['id']): ?>
                 <div class="service-card glass-card" style="padding: 20px;">
-                    <a href="/service-detail.php?id=<?= $related['id'] ?>" style="text-decoration: none; color: inherit;">
+                    <a href="<?= url('service-detail.php?id=' . $related['id']) ?> style="text-decoration: none; color: inherit;">
                         <img 
                             src="<?= htmlspecialchars($related['image_url'] ?? 'https://via.placeholder.com/300x200') ?>" 
                             alt="<?= htmlspecialchars($related['name']) ?>"

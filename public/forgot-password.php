@@ -2,6 +2,7 @@
 // forgot-password.php - Восстановление пароля
 
 require_once 'init.php';
+require_once 'config.php';
 
 use App\Helpers\Auth;
 
@@ -152,7 +153,7 @@ include __DIR__ . '/../src/views/layouts/header.php';
         <?php endif; ?>
         
         <div class="back-link">
-            <a href="/login.php">← Вернуться ко входу</a>
+            <a href="<?= url('login.php') ?>">← Вернуться ко входу</a>
         </div>
     </div>
 </div>

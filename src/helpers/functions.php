@@ -88,7 +88,9 @@ class Functions
     {
         $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
         $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
-        return "$protocol://$host";
+        // Базовый путь к проекту - измените если проект в другой папке
+        $basePath = '/gamestore-main/public';
+        return "$protocol://$host$basePath";
     }
     
     public static function asset(string $path): string

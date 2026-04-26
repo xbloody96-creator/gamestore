@@ -12,7 +12,7 @@ $currentUser = $_SESSION['user'] ?? null;
     <title><?= htmlspecialchars($pageTitle) ?></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/gamestore-main/public/assets/css/main.css">
+    <link rel="stylesheet" href="<?= url('gamestore-main/public/assets/css/main.css') ?>">
 </head>
 <body>
     <?php include __DIR__ . '/../src/views/layouts/header.php'; ?>

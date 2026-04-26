@@ -1,6 +1,7 @@
 <?php
 
 require_once 'init.php';
+require_once 'config.php';
 
 use App\Helpers\Auth;
 
@@ -282,7 +283,7 @@ include __DIR__ . '/../src/views/layouts/header.php';
 </style>
 
 <div class="news-detail-container">
-    <a href="/news.php" class="back-link">← Назад к новостям</a>
+    <a href="<?= url('news.php') ?>" class="back-link">← Назад к новостям</a>
     
     <div class="news-header-image fade-in">
         <img src="<?= htmlspecialchars($news['main_image'] ?? 'https://picsum.photos/seed/news/1000/600') ?>" alt="<?= htmlspecialchars($news['title']) ?>">
@@ -340,7 +341,7 @@ include __DIR__ . '/../src/views/layouts/header.php';
         <h2 class="related-title">Читайте также</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
             <?php for ($i = 1; $i <= 3; $i++): ?>
-            <a href="/news-detail.php?slug=news-<?= $i ?>" style="text-decoration: none;">
+            <a href="<?= url('news-detail.php?slug=news-' . $i) ?>" style="text-decoration: none;">
                 <div style="background: var(--bg-secondary); border-radius: var(--radius); overflow: hidden; transition: var(--transition);">
                     <img src="https://picsum.photos/seed/related<?= $i ?>/400/250" alt="Related News" style="width: 100%; height: 150px; object-fit: cover;">
                     <div style="padding: 15px;">

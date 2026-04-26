@@ -19,7 +19,7 @@ $pageTitle = '404 - Страница не найдена';
             <h1 style="font-size: 6rem; color: var(--primary-color); margin-bottom: 1rem;">404</h1>
             <h2 style="font-size: 2rem; margin-bottom: 1rem;">Страница не найдена</h2>
             <p style="color: var(--text-secondary); margin-bottom: 2rem;">К сожалению, запрашиваемая страница не существует или была удалена.</p>
-            <a href="/" class="btn btn-primary">Вернуться на главную</a>
+            <a href="<?= url('') ?>" class="btn btn-primary">Вернуться на главную</a>
         </div>
     </main>
     

@@ -1,6 +1,7 @@
 <?php
 
 require_once 'init.php';
+require_once 'config.php';
 
 use App\Helpers\Auth;
 use App\Helpers\Validator;
@@ -162,7 +163,7 @@ include __DIR__ . '/../src/views/layouts/header.php';
                     <input type="checkbox" name="remember" value="1">
                     <span>Запомнить меня</span>
                 </label>
-                <a href="/forgot-password.php" class="forgot-password">Забыли пароль?</a>
+                <a href="<?= url('forgot-password.php') ?>" class="forgot-password">Забыли пароль?</a>
             </div>
             
             <button type="submit" class="btn btn-primary" style="width: 100%;">
@@ -171,7 +172,7 @@ include __DIR__ . '/../src/views/layouts/header.php';
         </form>
         
         <div class="auth-footer">
-            Нет аккаунта? <a href="/register.php">Зарегистрироваться</a>
+            Нет аккаунта? <a href="<?= url('register.php') ?>">Зарегистрироваться</a>
         </div>
     </div>
 </div>

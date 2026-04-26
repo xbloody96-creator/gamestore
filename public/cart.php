@@ -1,6 +1,7 @@
 <?php
 
 require_once 'init.php';
+require_once 'config.php';
 
 use App\Helpers\Auth;
 
@@ -355,11 +356,11 @@ include __DIR__ . '/../src/views/layouts/header.php';
                 <span><?= number_format($totalAmount, 0, '.', ' ') ?> ₽</span>
             </div>
             
-            <a href="/checkout.php" class="checkout-btn">
+            <a href="<?= url('checkout.php') ?>" class="checkout-btn">
                 💳 Оформить заказ
             </a>
             
-            <a href="/products.php" class="continue-shopping">→ Продолжить покупки</a>
+            <a href="<?= url('products.php') ?>" class="continue-shopping">→ Продолжить покупки</a>
             
             <!-- Рекомендации новостей -->
             <div class="news-recommendation">
@@ -370,12 +371,12 @@ include __DIR__ . '/../src/views/layouts/header.php';
                         <img src="https://picsum.photos/seed/news<?= $i ?>/300/200" alt="News">
                         <div class="news-card-small-content">
                             <div class="news-card-small-title">Новые игры этой недели: обзор релизов</div>
-                            <a href="/news-detail.php?id=<?= $i ?>" style="color: var(--primary-color); font-size: 0.85rem;">Читать далее →</a>
+                            <a href="<?= url('news-detail.php?id=' . $i) ?>" style="color: var(--primary-color); font-size: 0.85rem;">Читать далее →</a>
                         </div>
                     </div>
                     <?php endfor; ?>
                 </div>
-                <a href="/news.php" style="display: block; text-align: center; margin-top: 15px; color: var(--primary-color);">Все новости →</a>
+                <a href="<?= url('news.php') ?>" style="display: block; text-align: center; margin-top: 15px; color: var(--primary-color);">Все новости →</a>
             </div>
         </div>
     </div>
@@ -386,7 +387,7 @@ include __DIR__ . '/../src/views/layouts/header.php';
         <div class="empty-cart-icon">🛒</div>
         <h2>Ваша корзина пуста</h2>
         <p>Добавьте товары, чтобы оформить заказ</p>
-        <a href="/products.php" class="btn btn-primary" style="padding: 15px 40px; font-size: 1.1rem;">
+        <a href="<?= url('products.php') ?>" class="btn btn-primary" style="padding: 15px 40px; font-size: 1.1rem;">
             🎮 Перейти в каталог
         </a>
     </div>
