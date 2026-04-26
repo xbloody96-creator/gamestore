@@ -6,7 +6,7 @@
  */
 
 require_once __DIR__ . '/../../src/config/database.php';
-require_once __DIR__ . '/../../src/helpers/auth.php';
+require_once __DIR__ . '/../../src/helpers/functions.php';
 require_once __DIR__ . '/../../src/models/Product.php';
 
 header('Content-Type: application/json');
