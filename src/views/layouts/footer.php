@@ -29,23 +29,23 @@
                 <div class="footer-section">
                     <h4>Категории</h4>
                     <ul>
-                        <li><a href="/products.php?category=games">Игры</a></li>
-                        <li><a href="/products.php?category=keys">Ключи активации</a></li>
-                        <li><a href="/products.php?category=accounts">Аккаунты</a></li>
-                        <li><a href="/products.php?category=gift-cards">Подарочные карты</a></li>
-                        <li><a href="/products.php?category=dlc">DLC и Дополнения</a></li>
-                        <li><a href="/products.php?category=software">Софт</a></li>
+                        <li><a href="/gamestore-main/public/products.php?category=games">Игры</a></li>
+                        <li><a href="/gamestore-main/public/products.php?category=keys">Ключи активации</a></li>
+                        <li><a href="/gamestore-main/public/products.php?category=accounts">Аккаунты</a></li>
+                        <li><a href="/gamestore-main/public/products.php?category=gift-cards">Подарочные карты</a></li>
+                        <li><a href="/gamestore-main/public/products.php?category=dlc">DLC и Дополнения</a></li>
+                        <li><a href="/gamestore-main/public/products.php?category=software">Софт</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
                     <h4>Информация</h4>
                     <ul>
-                        <li><a href="/#about">О нас</a></li>
-                        <li><a href="/news.php">Новости</a></li>
-                        <li><a href="/#promotions">Акции</a></li>
-                        <li><a href="/services.php">Услуги</a></li>
-                        <li><a href="/reviews.php">Отзывы</a></li>
+                        <li><a href="/gamestore-main/public/#about">О нас</a></li>
+                        <li><a href="/gamestore-main/public/news.php">Новости</a></li>
+                        <li><a href="/gamestore-main/public/#promotions">Акции</a></li>
+                        <li><a href="/gamestore-main/public/services.php">Услуги</a></li>
+                        <li><a href="/gamestore-main/public/reviews.php">Отзывы</a></li>
                     </ul>
                 </div>
                 
@@ -60,11 +60,11 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; <?= date('Y') ?> <?= $GLOBALS['siteName'] ?>. Все права защищены.</p>
+                <p>&copy; <?= date('Y') ?> <?= ($GLOBALS['siteName'] ?? 'GameStore') ?>. Все права защищены.</p>
             </div>
         </div>
     </footer>
     
-    <script src="/assets/js/main.js"></script>
+    <script src="/gamestore-main/public/assets/js/main.js"></script>
 </body>
 </html>
