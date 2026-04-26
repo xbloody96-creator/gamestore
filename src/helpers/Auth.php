@@ -43,12 +43,14 @@ class Auth
             ->required('nickname', 'Никнейм обязателен')
             ->required('birth_date', 'Дата рождения обязательна')
             ->date('birth_date', 'Некорректный формат даты')
-            ->custom('birth_date', fn($date) => {
+            ->custom('birth_date', function($date) {
                 $year = (int)explode('-', $date)[0];
                 return $year >= 1940;
             }, 'Дата рождения не может быть старше 1940 года')
             ->required('gender', 'Пол обязателен')
-            ->custom('gender', fn($g) => in_array($g, ['male', 'female', 'other']), 'Некорректное значение пола')
+            ->custom('gender', function($g) {
+                return in_array($g, ['male', 'female', 'other']);
+            }, 'Некорректное значение пола')
             ->required('password', 'Пароль обязателен')
             ->minLength('password', 6, 'Пароль должен быть не менее 6 символов')
             ->required('password_confirm', 'Подтверждение пароля обязательно')

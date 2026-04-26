@@ -142,18 +142,18 @@
 </head>
 <body>
     <aside class="admin-sidebar">
-        <a href="/admin/" class="admin-logo">
-            <img src="https://via.placeholder.com/45x45/6c5ce7/ffffff?text=G" alt="Logo">
+        <a href="/gamestore-main/public/admin/" class="admin-logo">
+            <img src="/gamestore-main/public/assets/images/placeholder-avatar.png" alt="Logo">
             <span>GameStore Admin</span>
         </a>
         <ul class="admin-menu">
-            <li><a href="/admin/" class="<?= basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : '' ?>"><span class="admin-menu-icon">📊</span> Дашборд</a></li>
-            <li><a href="/admin/products.php" class="<?= basename($_SERVER['PHP_SELF']) == 'products.php' ? 'active' : '' ?>"><span class="admin-menu-icon">🎮</span> Товары</a></li>
-            <li><a href="/admin/news.php" class="<?= basename($_SERVER['PHP_SELF']) == 'news.php' ? 'active' : '' ?>"><span class="admin-menu-icon">📰</span> Новости</a></li>
-            <li><a href="/admin/services.php" class="<?= basename($_SERVER['PHP_SELF']) == 'services.php' ? 'active' : '' ?>"><span class="admin-menu-icon">🛠️</span> Услуги</a></li>
-            <li><a href="/admin/orders.php" class="<?= basename($_SERVER['PHP_SELF']) == 'orders.php' ? 'active' : '' ?>"><span class="admin-menu-icon">📦</span> Заказы</a></li>
-            <li><a href="/"><span class="admin-menu-icon">🏠</span> На сайт</a></li>
-            <li><a href="/logout.php"><span class="admin-menu-icon">🚪</span> Выход</a></li>
+            <li><a href="/gamestore-main/public/admin/" class="<?= basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : '' ?>"><span class="admin-menu-icon">📊</span> Дашборд</a></li>
+            <li><a href="/gamestore-main/public/admin/products.php" class="<?= basename($_SERVER['PHP_SELF']) == 'products.php' ? 'active' : '' ?>"><span class="admin-menu-icon">🎮</span> Товары</a></li>
+            <li><a href="/gamestore-main/public/admin/news.php" class="<?= basename($_SERVER['PHP_SELF']) == 'news.php' ? 'active' : '' ?>"><span class="admin-menu-icon">📰</span> Новости</a></li>
+            <li><a href="/gamestore-main/public/admin/services.php" class="<?= basename($_SERVER['PHP_SELF']) == 'services.php' ? 'active' : '' ?>"><span class="admin-menu-icon">🛠️</span> Услуги</a></li>
+            <li><a href="/gamestore-main/public/admin/orders.php" class="<?= basename($_SERVER['PHP_SELF']) == 'orders.php' ? 'active' : '' ?>"><span class="admin-menu-icon">📦</span> Заказы</a></li>
+            <li><a href="/gamestore-main/public/"><span class="admin-menu-icon">🏠</span> На сайт</a></li>
+            <li><a href="/gamestore-main/public/logout.php"><span class="admin-menu-icon">🚪</span> Выход</a></li>
         </ul>
     </aside>
 
@@ -162,7 +162,7 @@
             <h1 class="admin-title"><?= htmlspecialchars($pageTitle ?? 'Админ-панель') ?></h1>
             <div style="display: flex; align-items: center; gap: 15px;">
                 <span style="color: var(--text-muted);"><?= htmlspecialchars(\App\Helpers\Auth::user()['nickname'] ?? 'Admin') ?></span>
-                <a href="/logout.php" class="btn btn-outline btn-sm">Выход</a>
+                <a href="/gamestore-main/public/logout.php" class="btn btn-outline btn-sm">Выход</a>
             </div>
         </div>
 
