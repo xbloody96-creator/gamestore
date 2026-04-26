@@ -41,7 +41,7 @@ $pageTitle = 'GameStore - Магазин игр, ключей и аккаунт�
     <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
-    <?php include __DIR__ . '/views/layouts/header.php'; ?>
+    <?php include __DIR__ . '/../src/views/layouts/header.php'; ?>
     
     <main>
         <section class="hero-slider">
@@ -165,7 +165,7 @@ $pageTitle = 'GameStore - Магазин игр, ключей и аккаунт�
         </section>
     </main>
     
-    <?php include __DIR__ . '/views/layouts/footer.php'; ?>
+    <?php include __DIR__ . '/../src/views/layouts/footer.php'; ?>
     
     <script src="/assets/js/main.js"></script>
 </body>
